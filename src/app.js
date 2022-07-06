@@ -4,9 +4,11 @@ const hbs = require('hbs')
 const { query } = require('express')
 const geoCode = require('./utils/geocode')
 const forCast = require('./utils/forecast')
-
-
+//hello-to check git status after commit
 const app =express()
+
+//settng port for heroku or to run locally or using heroku
+const port = process.env.PORT || 3000
 
 // console.log(__dirname)
 const dirPath = path.join(__dirname,'../public')
@@ -102,6 +104,6 @@ app.get('*',(req,res)=>{
 
 
 //To runserver giving port number and function to display text
-app.listen(3000,()=>{
-    console.log('Server Started on port 3000')
+app.listen(port,()=>{
+    console.log('Server Started on port'+port)
 })
